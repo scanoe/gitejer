@@ -10,6 +10,13 @@ class controlp extends CI_Controller {
 		$this->load->view('registroprofesor');
 		$this->load->view('footer');
 	}
+		public function MupdateE()
+	{
+		$this->load->helper('form');
+		$this->load->view('header');
+		$this->load->view('updateprofesor');
+		$this->load->view('footer');
+	}
 
 
 	
@@ -43,6 +50,20 @@ class controlp extends CI_Controller {
 
 		$profesor = new Profesor($data);
 		$profesor->registrar();
+
+	}
+		public function upprofesor(){
+		$this->load->model('Profesor');
+		$id=$this->input->post('id');
+		$data['cedula']=$this->input->post('cedula');
+		$data['nombre']=$this->input->post('nombre');
+		$data['fecha_nacimiento']=$this->input->post('fecha_nacimiento');
+		$data['lugar_nacimiento']=$this->input->post('lugar_nacimiento');
+		$data['titulo']=$this->input->post('titulo');
+		$data['departamento']=$this->input->post('departamento');
+
+		$profesor = new Profesor($data);
+		$profesor->update($id);
 
 	}
 		public function regcur(){

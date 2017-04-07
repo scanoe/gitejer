@@ -63,6 +63,19 @@ class Profesor extends CI_Model {
 
 		return $this->db->insert('profesor', $data);
 	}
+		public function update($id) {
+		$data = [
+			'cedula' => $this->cedula,
+			'nombre' => $this->nombre,
+			'fecha_nacimiento' => $this->fecha_nacimiento,
+			'lugar_nacimiento' => $this->lugar_nacimiento,
+			'titulo' => $this->titulo,
+			'departamento' => $this->departamento
+			
+		];
+
+		return $this->db->update('profesor', $data,['cedula' => $id]);
+	}
 		public function obtener_todas() {
 		$query = $this->db->get('profesor');
 
