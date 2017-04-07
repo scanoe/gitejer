@@ -69,7 +69,7 @@ class Profesor extends CI_Model {
 		$result = [];
 
 		foreach ($query->result() as $key=>$profesor) {
-			$result[$key] = new estudiante($profesor);
+			$result[$key] = new Profesor($profesor);
 		}
 
 		return $result;

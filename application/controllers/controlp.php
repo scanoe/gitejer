@@ -64,13 +64,13 @@ class controlp extends CI_Controller {
 		$matricula->registrar($curso,$estudiante);
 
 	}
-	public function listarE(){
+	public function listarP(){
 		$this->load->helper('form');
-		$this->load->model('Estudiante');
-		$data['elemento']=$this->Estudiante->obtener_todas();
+		$this->load->model('Profesor');
+		$data['elemento']=$this->Profesor->obtener_todas();
 		
 		$this->load->view('header');
-		$this->load->view('estudiantes',$data);
+		$this->load->view('profesores',$data);
 		$this->load->view('footer');
 	}
 	public function FiltrarE(){
